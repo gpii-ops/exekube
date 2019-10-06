@@ -89,6 +89,10 @@ resource "google_storage_bucket" "gcs_buckets" {
   location      = "${var.storage_location}"
   force_destroy = true
 
+  versioning = {
+    enabled = "${var.bucket_versioning_enabled}"
+  }
+
   # We must specify the provider due to the workaround for
   # https://github.com/hashicorp/terraform/issues/13018#issuecomment-291547654
   provider = "google.google"
