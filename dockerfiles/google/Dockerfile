@@ -41,7 +41,8 @@ RUN apk --no-cache add \
         jq \
         gnupg \
         ruby \
-        ruby-json
+        ruby-json \
+        ncurses
 
 COPY gemfiles/google /gemfiles/google/
 ENV BUNDLE_GEMFILE /gemfiles/google/Gemfile
