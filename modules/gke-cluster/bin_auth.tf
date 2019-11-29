@@ -115,6 +115,9 @@ resource "google_binary_authorization_policy" "policy" {
     name_pattern = "k8s.gcr.io/*"
   }
   admission_whitelist_patterns {
+    name_pattern = "gke.gcr.io/*"
+  }
+  admission_whitelist_patterns {
     name_pattern = "gcr.io/stackdriver-agents/*"
   }
 }
