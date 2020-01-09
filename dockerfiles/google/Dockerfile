@@ -58,7 +58,7 @@ RUN apk --no-cache add \
         make \
         ruby-dev
 
-ENV CLOUD_SDK_VERSION 247.0.0
+ENV CLOUD_SDK_VERSION 275.0.0
 ENV PATH /google-cloud-sdk/bin:$PATH
 RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz \
         && tar xzf google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz \
