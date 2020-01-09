@@ -1,11 +1,11 @@
 # This is the list of Terraform plugins to be installed in the exekube container
 
 provider "google" {
-  version = "~> 2.7.0"
+  version = "~> 2.20.1"
 }
 
 provider "google-beta" {
-  version = "~> 2.7.0"
+  version = "~> 2.20.1"
 }
 
 provider "random" {
