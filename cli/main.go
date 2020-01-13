@@ -17,8 +17,8 @@ func main() {
 	app.Name = "Exekube"
 	app.Version = "0.5.0"
 	app.Usage = "Manage the whole lifecycle of Kubernetes-based projects as declarative code"
-	app.Authors = []cli.Author{
-		cli.Author{
+	app.Authors = []*cli.Author{
+		&cli.Author{
 			Name:  "Ilya Sotkov",
 			Email: "ilya@sotkov.com",
 		},
@@ -37,7 +37,7 @@ func main() {
 		return nil
 	}
 
-	app.Commands = []cli.Command{
+	app.Commands = []*cli.Command{
 		{
 			Name:    "apply",
 			Aliases: []string{},
