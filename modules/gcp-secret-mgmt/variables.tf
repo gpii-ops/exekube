@@ -28,7 +28,7 @@ variable "storage_location" {
 
 variable "encryption_keys" {
   description = "Names of encryption keys to create (a storage bucket will also be created for each)"
-  default = []
+  default     = []
 }
 
 variable "apply_audit_config" {

@@ -36,6 +36,10 @@ resource "google_storage_bucket" "exported-logs" {
       age = "${var.exported_logs_expire_after}"
     }
   }
+
+  logging {
+    log_bucket = "${var.exported_logs_access_log_bucket}"
+  }
 }
 
 resource "google_storage_bucket" "exported-logs-custom-encryption" {
@@ -61,6 +65,10 @@ resource "google_storage_bucket" "exported-logs-custom-encryption" {
 
   encryption {
     default_kms_key_name = "${var.exported_logs_encryption_key}"
+  }
+
+  logging {
+    log_bucket = "${var.exported_logs_access_log_bucket}"
   }
 }
 
