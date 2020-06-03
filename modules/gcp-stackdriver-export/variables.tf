@@ -45,3 +45,8 @@ variable "exported_logs_encryption_key" {
   description = "Name of a KMS key to use (e.g. projects/my-project/locations/global/keyRings/keyring/cryptoKeys/gcp-stackdriver-export). Empty string means use Google's default encryption."
   default     = ""
 }
+
+variable "exported_logs_access_log_bucket" {
+  description = "Exported logs access log bucket name"
+  default     = ""
+}
