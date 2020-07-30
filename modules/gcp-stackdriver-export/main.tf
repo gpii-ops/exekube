@@ -43,7 +43,8 @@ resource "google_storage_bucket" "exported-logs" {
 }
 
 resource "google_storage_bucket" "exported-logs-custom-encryption" {
-  count         = "${var.exported_logs_encryption_key == "" ? 0 : 1}"
+  count = "${var.exported_logs_encryption_key == "" ? 0 : 1}"
+
   name          = "${var.project_id}-exported-logs"
   force_destroy = "${var.exported_logs_force_destroy}"
   storage_class = "${var.exported_logs_storage_class}"
@@ -64,7 +65,7 @@ resource "google_storage_bucket" "exported-logs-custom-encryption" {
   }
 
   encryption {
-    default_kms_key_name = "${var.exported_logs_encryption_key}"
+    default_kms_key_name = "${google_kms_crypto_key_iam_binding.exported-logs-writer-custom-encryption.0.crypto_key_id}"
   }
 
   logging {
